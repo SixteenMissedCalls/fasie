@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import classes from './Navbar.module.scss';
-import logo from '@/assets/logo.png';
+import PetVetLogo from './PetVetLogo';
 
 const darkBgPagesPaths = ['/home', '/feedback'];
 
@@ -37,8 +37,8 @@ const Navbar = () => {
       <Link className={`${classes.link} ${isBgDark ? classes.light : classes.dark} ${classes[`display-${displayType}`]}`} to={'/home'}>Главная</Link>
       <Link className={`${classes.link} ${isBgDark ? classes.light : classes.dark} ${classes[`display-${displayType}`]}`} to={'/about'}>О нас</Link>
       <Link className={`${classes.link} ${isBgDark ? classes.light : classes.dark} ${classes[`display-${displayType}`]}`} to={'/products'}>Оплатить подписку</Link>
-      <button className={classes.logo} onClick={handleClickOnLogoBtn}>
-        <img className={classes.logo} src={logo} alt="" />
+      <button type="button" className={classes.logo} onClick={handleClickOnLogoBtn} aria-label="PetVet — меню">
+        <PetVetLogo className={classes.logo} />
       </button>
       <Link className={`${classes.link} ${isBgDark ? classes.light : classes.dark} ${classes[`display-${displayType}`]}`} to={'/feedback'}>Отзывы</Link>
       <button className={`${classes.button} ${isBgDark ? classes.light : classes.dark} ${classes[`display-${displayType}`]}`} onClick={handleClickOnHelpBtn} >Помощь</button>
